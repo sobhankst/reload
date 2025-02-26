@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Reload Page with Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+    <script>
+        // Set the reload interval (10 seconds)
+        const reloadTime = 10000; // 10 seconds in milliseconds
+        let timeLeft = reloadTime / 1000; // Convert to seconds
+
+        // Function to update the timer
+        function updateTimer() {
+            document.getElementById("timer").textContent = `Time until reload: ${timeLeft} seconds`;
+            timeLeft--;
+
+            if (timeLeft < 0) {
+                clearInterval(timerInterval); // Stop the timer
+                reloadPage(); // Reload the page
+            }
+        }
+
+        // Function to reload the page
+        function reloadPage() {
+            window.location.href = "https://125700.shop/d1dd2f79857b2739d8e1/7da67ab9b6/?placementName=default";
+        }
+
+        // Start the timer
+        const timerInterval = setInterval(updateTimer, 1000); // Update every second
+    </script>
+</head>
+<body>
+    <h1>This page will reload every 10 seconds.</h1>
+    <p>You will be redirected to the specified link shortly.</p>
+    <div id="timer">Time until reload: 10 seconds</div>
+</body>
+</html>
